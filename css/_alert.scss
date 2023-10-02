@@ -1,0 +1,29 @@
+#alert .pop-up-card {
+  .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    font-size: 20px;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+
+    .button {
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition-duration: var(--duration);
+      text-align: center;
+    }
+
+    .alert-replay {
+      background: $button-color;
+
+      &:hover {
+        background: $button-hover;
+      }
+    }
+  }
+}

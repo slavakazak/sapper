@@ -1,0 +1,55 @@
+#menu {
+  position: absolute;
+  background: $card-bg;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  color: $font;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 50;
+
+  @media (max-width: 600px) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: 310px) {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .button {
+    background: $button-color;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: var(--duration);
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 310px) {
+      padding: 0 5px;
+    }
+
+    &:hover {
+      background: $button-hover;
+    }
+  }
+
+  .mode.active {
+    background: $mode-color;
+    color: $negative-font;
+
+    &:hover {
+      background: $mode-hover;
+    }
+  }
+}

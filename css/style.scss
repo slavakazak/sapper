@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+$grey-900: #212121;
+$grey-800: #424242;
+$grey-700: #616161;
+$grey-600: #757575;
+$grey-500: #9e9e9e;
+$grey-50: #fafafa;
+$orange-a700: #ff6d00;
+$orange-a400: #ff9100;
+
+$pop-up-bg: $grey-900;
+$card-bg: $grey-800;
+$font: $grey-50;
+$negative-font: $grey-900;
+$button-color: $grey-700;
+$button-hover: $grey-600;
+$button-active: $grey-500;
+$mode-color: $orange-a700;
+$mode-hover: $orange-a400;
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  overflow: hidden;
+  user-select: none;
+  --duration: 200ms;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#canvas-wrap {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: var(--duration);
+  text-align: center;
+}
+
+@import "pop-up";
+@import "alert";
+@import "settings";
+@import "menu";

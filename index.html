@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="canvas-wrap"></div>
+  <div id="alert" class='pop-up'>
+    <div class='pop-up-card'>
+      <div class="cross"></div>
+      <div class="title">Error!</div>
+      <div class="buttons">
+        <div class="alert-replay button">Replay</div>
+      </div>
+    </div>
+  </div>
+  <div id="settings" class='pop-up'>
+    <div class='pop-up-card'>
+      <div class="cross"></div>
+      <div class="row">
+        <label>
+          <span class='label'>Width<span class="help top" data-text='Number of cells horizontally'>?</span></span>
+          <input type="number" class="width-input" min="1" max="5000" step="1" value='20' data-default='20'>
+        </label>
+        <label>
+          <span class='label'>Height<span class="help top" data-text='Number of cells vertically'>?</span></span>
+          <input type="number" class="height-input" min="" max="5000" step="1" value='20' data-default='20'>
+        </label>
+        <label>
+          <span class='label'>Indent<span class="help left top"
+              data-text='Offset of the field from the edges of the screen (px)'>?</span></span>
+          <input type="number" class="indent-input" min="0" max="100000" step="1" value='20' data-default='20'>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span class='label'>Cell size<span class="help" data-text='Single cell size (px)'>?</span></span>
+          <input type="number" class="cell_size-input" min="0.1" max="1000" step="0.1" value='50' data-default='50'>
+        </label>
+        <label>
+          <span class='label'>Mine<span class="help left"
+              data-text='Approximate number of mines as a percentage of all cells'>?</span></span>
+          <input type="number" class="mine-input" min="0" max="100" step="1" value='15' data-default='15'>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span class='label'>Touch<span class="help" data-text='Time required for a long press (ms)'>?</span></span>
+          <input type="number" class="touch-input" min="0" max="10000" step="1" value='500' data-default='500'>
+        </label>
+        <label>
+          <span class='label'>Wheel<span class="help" data-text='Mouse wheel sensitivity (> 0)'>?</span></span>
+          <input type="number" class="wheel-input" min="0.01" max="10" step="0.01" value='0.5' data-default='0.5'>
+        </label>
+        <label>
+          <span class='label'>Shift<span class="help left"
+              data-text='The minimum shift at which a press is counted (px)'>?</span></span>
+          <input type="number" class="shift-input" min="0" max="1000" step="1" value='30' data-default='30'>
+        </label>
+      </div>
+      <div class="title">Theme</div>
+      <div class="row themes">
+        <div class="button active" data-value='dark'>Dark</div>
+        <div class="button" data-value='light'>Light</div>
+      </div>
+      <div class="title">Text Color</div>
+      <div class="row text_color">
+        <div class="button active" data-value='rainbow'>Rainbow</div>
+        <div class="button" data-value='red'>Red</div>
+        <div class="button" data-value='blue'>Blue</div>
+        <div class="button" data-value='green'>Green</div>
+      </div>
+      <div class="row">
+        <label>
+          <span class='label'>DPI<span class="help" data-text='Dots per inch'>?</span></span>
+          <input type="number" class="dpi-input" min="1" max="10" step="1" value='2' data-default='2'>
+        </label>
+        <label>
+          <span class='label'>Duration<span class="help left" data-text='Animation duration (ms)'>?</span></span>
+          <input type="number" class="duration-input" min="0" max="1000" step="1" value='200' data-default='200'>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span class='label'>Text draw<span class="help"
+              data-text='Minimum cell size at which text is visible (px)'>?</span></span>
+          <input type="number" class="text_draw-input" min="0" max="1000" step="0.1" value='5' data-default='5'>
+        </label>
+        <label>
+          <span class='label'>Grid draw<span class="help"
+              data-text='Minimum cell size at which the grid is visible (px)'>?</span></span>
+          <input type="number" class="grid_draw-input" min="0" max="1000" step="0.1" value='10' data-default='10'>
+        </label>
+        <label>
+          <span class='label'>Cell draw<span class="help left"
+              data-text='Minimum cell size at which it is visible (px)'>?</span></span>
+          <input type="number" class="cell_draw-input" min="0" max="1000" step="0.1" value='2' data-default='2'>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div id="menu">
+    <div class="replay button">Replay</div>
+    <div class="settings button">Settings</div>
+    <div class="mode button">Opening mode</div>
+  </div>
+  <script type="module" src="modules/index.js"></script>
+</body>
+
+</html>
