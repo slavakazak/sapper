@@ -56,3 +56,5 @@ export const theme = {
   fontColor: textColors.rainbow,
   numberOfColors: 8, //колличество цветов
 }
+
+export const cellSize = 50 //размер клетки

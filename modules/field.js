@@ -21,6 +21,7 @@ export default class Field {
     this.clear = this.clear.bind(this)
     this.generateMines = this.generateMines.bind(this)
   }
+  //колличество мин вокруг клетки
   num(x, y) {
     let num = 0
     for (let i = x - 1; i <= x + 1; i++) {
@@ -30,9 +31,11 @@ export default class Field {
     }
     return num
   }
+  //пренадлежит ли клетка полю
   inBord(i, j) {
     return i >= 0 && i < this.array.length && j >= 0 && j < this.array[0].length
   }
+  //открыть клетку и вернуьб её значение
   open(x, y) {
     let value
     if (this.#first) {
@@ -56,6 +59,7 @@ export default class Field {
     }
     return value
   }
+  //проверить что все клетки без мин открыты
   check() {
     let ok = true
     for (let i = 0; i < this.array.length; i++) {
@@ -67,6 +71,7 @@ export default class Field {
     }
     if (ok) this.#alert.open('Victory!')
   }
+  //очистить поле
   clear() {
     this.#first = true
     this.array = []
@@ -77,6 +82,7 @@ export default class Field {
       }
     }
   }
+  //генерация мин
   generateMines(x, y) {
     for (let i = 0; i < this.#options.width; i++) {
       for (let j = 0; j < this.#options.height; j++) {

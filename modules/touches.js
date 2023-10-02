@@ -118,7 +118,11 @@ export default class Touches {
   }
   //масштабирование
   scaling(scale, x, y) {
-    const cMin = Math.min((this.#layer.height - this.#layer.options.indent * 2) / this.#layer.options.height, (this.#layer.width - this.#layer.options.indent * 2) / this.#layer.options.width, this.#layer.cellSize) //минимальный размер клетки
+    const cMin = Math.min(
+      (this.#layer.height - this.#layer.options.indent * 2) / this.#layer.options.height,
+      (this.#layer.width - this.#layer.options.indent * 2) / this.#layer.options.width,
+      this.#layer.cellSize
+    ) //минимальный размер клетки
     const cMax = Math.min(this.#layer.height, this.#layer.width) / 2 //максимальный размер клетки
     const prevC = this.#layer.cellSize
     const newC = this.#layer.cellSize * scale

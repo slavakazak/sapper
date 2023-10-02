@@ -1,4 +1,4 @@
-import { MINE, OPEN, FLAG, options, graph, theme } from './constants.js'
+import { MINE, OPEN, FLAG, options, graph, theme, cellSize } from './constants.js'
 import Field from './field.js'
 import Touches from './touches.js'
 import FlagMode from './flag-mode.js'
@@ -15,7 +15,7 @@ export default class Layer {
     this.fitToContainer = this.fitToContainer.bind(this)
     this.fitToContainer()
 
-    this.cellSize = 50 //размер клетки
+    this.cellSize = cellSize
     this.shift = {
       x: (this.width - this.options.width * this.cellSize) / 2,
       y: (this.height - this.options.height * this.cellSize) / 2
@@ -31,25 +31,19 @@ export default class Layer {
 
     this.canvas.addEventListener("touchstart", this.touches.handleTouchStart, false)
     this.canvas.addEventListener("mousedown", this.touches.handleMouseDown, false)
-
     this.canvas.addEventListener("touchcancel", this.touches.handleСancel, false)
     this.canvas.addEventListener("mouseout", this.touches.handleСancel, false)
-
     this.canvas.addEventListener("touchend", this.touches.handleTouchEnd, false)
     this.canvas.addEventListener("mouseup", this.touches.handleMouseUp, false)
-
     this.canvas.addEventListener("contextmenu", this.touches.handleContextMenu, false)
-
     this.canvas.addEventListener("touchmove", this.touches.handleTouchMove, false)
     this.canvas.addEventListener("mousemove", this.touches.handleMouseMove, false)
-
     this.canvas.addEventListener('wheel', this.touches.handleWheel, false)
   }
   fitToContainer() {
     this.width = this.canvas.width = this.canvas.offsetWidth * this.graph.DPI
     this.height = this.canvas.height = this.canvas.offsetHeight * this.graph.DPI
   }
-  //display----------------------------------------------------------------------------------------
   display() {
     const options = this.options
     const graph = this.graph
