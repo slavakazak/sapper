@@ -9,6 +9,10 @@ export default class Layer {
     this.graph = graph
     this.theme = theme
 
+    const mineImg = new Image()
+    mineImg.onload = () => this.mineImg = mineImg
+    mineImg.src = "../img/mine.png"
+
     this.canvas = document.createElement('canvas')
     this.context = this.canvas.getContext('2d')
     container.appendChild(this.canvas)
@@ -86,6 +90,7 @@ export default class Layer {
             if (field.array[i][j].value === MINE) {
               context.fillStyle = theme.mineColor
               context.fillRect(b.x, b.y, b.cellSize, b.cellSize)
+              context.drawImage(this.mineImg, b.x, b.y, b.cellSize, b.cellSize)
             } else if (field.array[i][j].value > 0 && cellSize > graph.text) {
               context.fillStyle = theme.fontColor[(+field.array[i][j].value - 1) % theme.numberOfColors]
               context.fillText(field.array[i][j].value, i * cellSize + 7 * cellSize / 32 + shift.x, j * cellSize + 28 * cellSize / 32 + shift.y)
